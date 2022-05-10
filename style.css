@@ -1,55 +1,98 @@
-body{
-    background-image: url(https://i.pinimg.com/originals/ec/b6/41/ecb6416c16b66e9e5409def9271224a2.gif);
-    background-repeat: no-repeat;
-    background-size: 1920px 1080px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*
+{
+    font-family: 'Poppins', sans-serif;
 }
 
+body{
+    background-image: url(fondstylé.gif);
+    }
+
 .cadre{
-    border: 1px solid rgb(145, 49, 49);
-    border-radius: 5%;
-    width: 350px;
-    height: 450px;
-    display: flex;
-    margin:auto;
-    margin-top: 150px;
-    background-color: rgb(219, 170, 170);
+  position: absolute;
+  width: 350px;
+  height: 450px;
+  background: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
 }
 
 .carte{
-    text-align: center;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    transform-style: preserve-3d;
-    transition: all 0.5 ease;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
 
 .carte:hover{
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
-.devant{
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
+ .devant{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  background: #437ba8;
+  color: #000;
 }
 
-.derrière{
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    transform: rotateY(180deg);
+.derriere{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  background: #70419c;
+  color: #333;
+  text-align: center;
+  transform: rotateY(180deg);
+}
+
+.one{
+    grid-column-start: 1;
+    grid-column-end: 2;
 }
 
 .one img{
+    margin-top: 50px;
     width: 250px;
     border-radius: 55%;
-    border: 1px solid rgb(145, 49, 49);
-    margin-left: 55px;
+    border: 1px solid #437ba8;
 }
 
-h1{
-    font-size: 24px;
-    font-style: normal;
-    font-weight: normal;
+.pc{
+    width: 250px;
+    margin-left: 50px;
+}
+
+.devant h1, .derriere h1{
+    text-align: center;
+    color: #ffffff;
+    text-decoration:overline underline;
+}
+
+.devant p, .derriere p{
+    text-align: center;
+    color: white;
+}
+
+.retourne{
+    grid-row-start: 2;
 }
